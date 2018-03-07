@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jdkoeppen/node-blog-post-api/issues"
   },
-  "homepage": "https://github.com/jdkoeppen/node-blog-post-api#readme"
+  "homepage": "https://github.com/jdkoeppen/node-blog-post-api#readme",
+  "dependencies": {
+    "uuid": "^3.2.1"
+  }
 }

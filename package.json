@@ -2,9 +2,9 @@
   "name": "blog-post-api",
   "version": "1.0.0",
   "description": "",
-  "main": "models.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,10 @@
   "homepage": "https://github.com/jdkoeppen/node-blog-post-api#readme",
   "dependencies": {
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^5.0.4"
   }
 }

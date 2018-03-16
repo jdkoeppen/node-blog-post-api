@@ -1,8 +1,8 @@
 const express = require("express");
-const router = express.router;
+const router = express.Router();
 
 const bodyParser = require("body-parser");
-
+const jsonParser = bodyParser.json();
 const { BlogPosts } = require("./models");
 
 function lorem() {
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   res.json(BlogPosts.get());
 });
 
-router.post("/", bodyParser, (req, res) => {
+router.post("/", jsonParser, (req, res) => {
   const requiredFields = ["title", "content", "author"];
   for (i = 0; i < requiredFields.lengtth; i++) {
     const field = requiredFields[i];
@@ -34,7 +34,7 @@ router.post("/", bodyParser, (req, res) => {
   res.status(201).json(post);
 });
 
-router.put("/:id", bodyParser, (req, res) => {
+router.put("/:id", jsonParser, (req, res) => {
   const requiredFields = ["id", "title", "content", "author", "publishDate"];
   for (i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -51,6 +51,7 @@ router.put("/:id", bodyParser, (req, res) => {
     console.error(message);
     return res.status(400).send(message);
   }
+  return res.status(204).send(req.body)
 });
 
 router.delete("/:id", (req, res) => {
